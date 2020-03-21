@@ -1,5 +1,5 @@
 {% set name = "pg8000" %}
-{% set version = "1.13.2" %}
+{% set version = "1.14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: eebcb4176a7e407987e525a07454882f611985e0becb2b73f76efb93bbdc0aab
+  sha256: f9c1dcf89d6d2e8fd3677b8fa8b234deb56befa710625f3b5152294fb302f71e
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
@@ -31,7 +31,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'PostgreSQL interface library'
+  summary: PostgreSQL interface library
 
   description: |
     pg8000 is a Pure-Python interface to the PostgreSQL database engine.  It is
