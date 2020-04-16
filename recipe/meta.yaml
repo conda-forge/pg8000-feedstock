@@ -1,5 +1,5 @@
 {% set name = "pg8000" %}
-{% set version = "1.15.1" %}
+{% set version = "1.15.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 01033498ffb27e780f6fb9ec877655ad97ceb26a50efdd77ca3b39ab2271f37c
+  sha256: eb42ba62fbc048c91d5cf1ac729e0ea4ee329cc526bddafed4e7a8aa6b57fbbb
 
 build:
   number: 0
