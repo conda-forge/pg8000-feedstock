@@ -1,5 +1,5 @@
 {% set name = "pg8000" %}
-{% set version = "1.21.0" %}
+{% set version = "1.21.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c99108c630b1c468668a8def38be4c91b2fb7cf0154ce7918e7a3912e60652d7
+  sha256: 1ccbeec93b70e2e8532df3abddc6905c7821909c96dceaaef751b57c5291869a
 
 build:
   number: 0
@@ -20,7 +20,7 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - scramp ==1.4.0
+    - scramp >=1.4.0
 
 test:
   imports:
