@@ -20,7 +20,7 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - scramp >=1.4.1
+    - scramp >=1.4.0
 
 test:
   imports:
