@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
-  noarch: python
+#  noarch: python # noarch does not apply because of selector [py<38] on importlib-metadata
 
 requirements:
   host:
