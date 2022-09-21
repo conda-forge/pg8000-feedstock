@@ -18,13 +18,21 @@ requirements:
   host:
     - python >=3.7
     - pip
+    - setuptools >=42
+    - versioningit >=1.1.1
   run:
+    - importlib-metadata >=1.0
     - python >=3.7
     - scramp >=1.4.1
 
 test:
   imports:
     - pg8000
+  commands:
+    - pip check
+    - python -c 'import pg8000; print(pg8000.__version__)'
+  requires:
+    - pip
 
 about:
   home: https://github.com/tlocke/pg8000
