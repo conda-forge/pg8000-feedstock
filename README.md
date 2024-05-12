@@ -1,11 +1,11 @@
-About pg8000
-============
+About pg8000-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pg8000-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/tlocke/pg8000
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pg8000-feedstock/blob/main/LICENSE.txt)
 
 Summary: PostgreSQL interface library
 
