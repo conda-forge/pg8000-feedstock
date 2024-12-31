@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: c8c954d3c86d7fbf591bc83b00d6ece289fae176c8335a182a7570699da2bfdc
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - setuptools >=42
     - versioningit >=1.1.1
   run:
     - importlib-metadata >=1.0
-    - python >=3.7
+    - python >={{ python_min }}
     - scramp >=1.4.3
     - python-dateutil >=2.8.2
 
@@ -34,6 +34,7 @@ test:
     - python -c 'import pg8000; print(pg8000.__version__)'
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/tlocke/pg8000
