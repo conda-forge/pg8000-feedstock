@@ -6,24 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: c8c954d3c86d7fbf591bc83b00d6ece289fae176c8335a182a7570699da2bfdc
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   noarch: python
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
-    - setuptools >=42
-    - versioningit >=1.1.1
+    - hatchling
+    - versioningit >=3.3.0
   run:
-    - importlib-metadata >=1.0
-    - python >=3.7
-    - scramp >=1.4.3
+    - python >={{ python_min }}
+    - scramp >=1.4.5
     - python-dateutil >=2.8.2
 
 test:
@@ -33,10 +32,11 @@ test:
     - pip check
     - python -c 'import pg8000; print(pg8000.__version__)'
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
-  home: https://github.com/tlocke/pg8000
+  home: https://codeberg.org/tlocke/pg8000
   license: MIT
   license_family: MIT
   license_file: LICENSE
@@ -57,3 +57,4 @@ extra:
     - nicolas-geniteau
     - maximerihouey
     - ncolomer
+    - xylar
