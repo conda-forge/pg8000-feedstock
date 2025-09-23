@@ -1,11 +1,11 @@
-About pg8000
-============
-
-Home: https://github.com/tlocke/pg8000
-
-Package license: MIT
+About pg8000-feedstock
+======================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pg8000-feedstock/blob/main/LICENSE.txt)
+
+Home: https://codeberg.org/tlocke/pg8000
+
+Package license: MIT
 
 Summary: PostgreSQL interface library
 
@@ -105,7 +105,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
@@ -156,4 +156,5 @@ Feedstock Maintainers
 * [@maximerihouey](https://github.com/maximerihouey/)
 * [@ncolomer](https://github.com/ncolomer/)
 * [@nicolas-geniteau](https://github.com/nicolas-geniteau/)
+* [@xylar](https://github.com/xylar/)
 
