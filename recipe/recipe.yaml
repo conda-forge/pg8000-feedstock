@@ -1,47 +1,51 @@
-{% set name = "pg8000" %}
-{% set version = "1.31.5" %}
+schema_version: 1
+
+context:
+  name: pg8000
+  version: "1.31.6"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 46ebb03be52b7a77c03c725c79da2ca281d6e8f59577ca66b17c9009618cae78
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 553b240256d4b2d8f0ad2af28d07df1f9980247f74ac98d2c2b573762ec1ff1b
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - pip
     - hatchling
     - versioningit >=3.3.0
   run:
-    - python >={{ python_min }}
-    - scramp >=1.4.5
+    - python >=${{ python_min }}
+    - scramp ==1.5.0
     - python-dateutil >=2.8.2
-
-test:
-  imports:
-    - pg8000
-  commands:
-    - pip check
-    - python -c 'import pg8000; print(pg8000.__version__)'
-  requires:
-    - python {{ python_min }}
-    - pip
+tests:
+  - python:
+      imports:
+        - pg8000
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
+    script:
+      - python -c 'import pg8000; print(pg8000.__version__)'
 
 about:
-  home: https://codeberg.org/tlocke/pg8000
   license: MIT
-  license_family: MIT
   license_file: LICENSE
   summary: PostgreSQL interface library
-
   description: |
     pg8000 is a Pure-Python interface to the PostgreSQL database engine.  It is
     one of many PostgreSQL interfaces for the Python programming language.
@@ -51,6 +55,7 @@ about:
     version 2.0.
     pg8000's name comes from the belief that it is probably about the 8000th
     PostgreSQL interface for Python.
+  homepage: https://codeberg.org/tlocke/pg8000
 
 extra:
   recipe-maintainers:
