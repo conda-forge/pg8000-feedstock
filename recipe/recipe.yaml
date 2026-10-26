@@ -25,7 +25,7 @@ requirements:
     - versioningit >=3.3.0
   run:
     - python >=${{ python_min }}
-    - scramp >=1.4.5
+    - scramp ==1.5.0
     - python-dateutil >=2.8.2
 
 tests:
@@ -33,7 +33,9 @@ tests:
       imports:
         - pg8000
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version:
+        - ${{ python_min }}
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
