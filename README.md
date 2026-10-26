@@ -18,7 +18,6 @@ version 2.0.
 pg8000's name comes from the belief that it is probably about the 8000th
 PostgreSQL interface for Python.
 
-
 Current build status
 ====================
 
