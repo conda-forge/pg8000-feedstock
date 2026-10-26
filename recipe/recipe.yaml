@@ -27,7 +27,6 @@ requirements:
     - python >=${{ python_min }}
     - scramp ==1.5.0
     - python-dateutil >=2.8.2
-
 tests:
   - python:
       imports:
@@ -56,8 +55,6 @@ about:
     version 2.0.
     pg8000's name comes from the belief that it is probably about the 8000th
     PostgreSQL interface for Python.
-
-
   homepage: https://codeberg.org/tlocke/pg8000
 
 extra:
